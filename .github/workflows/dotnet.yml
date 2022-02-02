@@ -1,12 +1,13 @@
 #....
 #pr3
+#pr4
 name: .NET
 
 on:
   #push:
     #branches: [ workitem ]
   pull_request:
-    branches: [ Integration ]
+    branches: [ workitem ]
 
 jobs:
   build:
