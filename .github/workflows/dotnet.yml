@@ -10,7 +10,7 @@ on:
   workflow_dispatch:
     inputs:
       v1:
-        description: 'input1'
+        description: 'branch'
         required: true
         #default: '2.5.3'
       v2:
