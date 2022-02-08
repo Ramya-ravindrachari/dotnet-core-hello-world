@@ -2,10 +2,21 @@
 name: .NET
 
 on:
-  push:
-    branches: [ workitem ]
+  #push:
+    #branches: [ workitem ]
   #pull_request:
     #branches: [ Integration ]
+    
+  workflow_dispatch:
+    inputs:
+      v1:
+        description: 'input1'
+        required: true
+        #default: '2.5.3'
+      v2:
+        description: 'input2'
+        required: true
+        default: 'true'
 
 jobs:
   build:
@@ -25,6 +36,10 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+    - name: Set Flutter version
+    - uses: subosito/flutter-action@v2.2.0
+      with:
+          flutter-version: '${{ github.event.inputs.v1}}'
 
   deploy_to_dev:
     runs-on: ubuntu-latest
