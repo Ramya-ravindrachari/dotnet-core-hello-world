@@ -13,8 +13,8 @@ on:
      - Workitem
    pull_request:
     branches:
-    #- master
-     - integration
+     - master
+     
 
 jobs:
   build:
