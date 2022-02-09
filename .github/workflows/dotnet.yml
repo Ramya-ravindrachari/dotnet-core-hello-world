@@ -8,13 +8,14 @@ name: .NET
 on:
    #schedule:
     #- cron: '0 0 * * *'
-   push:
-     branches:
-     - Workitem
+   #push:
+     #branches:
+     #- Workitem
    pull_request:
     branches:
      - master
-     
+     - workitem
+     - Integration
 
 jobs:
   build:
