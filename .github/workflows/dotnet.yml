@@ -8,9 +8,10 @@ name: .NET
 on:
    #schedule:
     #- cron: '0 0 * * *'
-   #push:
-     #branches:
+   push:
+     branches:
      #- Workitem
+     - branch_5106
    pull_request:
     branches:
      - master
