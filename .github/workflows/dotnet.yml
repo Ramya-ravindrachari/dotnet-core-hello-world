@@ -12,6 +12,7 @@ on:
      branches:
      #- Workitem
      - branch_5106
+     - test
    pull_request:
     branches:
      - master
