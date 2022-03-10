@@ -40,13 +40,17 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
       
-    - name: slack integration
-    - uses: ravsamhq/notify-slack-action@v1
-      if: always()
-      with:
-       status: ${{ job.status }} # required
-       steps: ${{toJson(steps)}}
+    - uses: act10ns/slack@v1
+      with: 
+       status: ${{ job.status }}
        channel: 'cicd'
+      
+  #  - name: slack integration
+   # - uses: ravsamhq/notify-slack-action@v1
+    # with:
+     #  status: ${{ job.status }} # required
+      # steps: ${{toJson(steps)}}
+       #channel: 'cicd'
   #deploy_to_dev:
    # runs-on: ubuntu-latest
     #needs: build
