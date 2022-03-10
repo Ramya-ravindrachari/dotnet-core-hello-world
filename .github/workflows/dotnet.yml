@@ -1,6 +1,6 @@
 name: .NET
 
-#on:
+#on.:
   #push:
     #branches: [ workitem ]
   #pull_request:
@@ -45,9 +45,8 @@ jobs:
       if: always()
       with:
        status: ${{ job.status }} # required
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
-
+       steps: ${{toJson(steps)}}
+       channel: 'cicd'
   #deploy_to_dev:
    # runs-on: ubuntu-latest
     #needs: build
