@@ -23,8 +23,8 @@ jobs:
 
     runs-on: ubuntu-latest
     
-    env:
-      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    #env:
+     # SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
     
 
     steps:
@@ -40,10 +40,22 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
       
-    - uses: act10ns/slack@v1
-      with: 
-       status: ${{ job.status }}
-       channel: 'cicd'
+    - name: Slack Notification
+      uses: rtCamp/action-slack-notify@v2
+      env:
+        SLACK_CHANNEL: cicd
+       # SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+       # SLACK_ICON: https://github.com/rtCamp.png?size=48
+        #SLACK_MESSAGE: 'Post Content :rocket:'
+        #SLACK_TITLE: Post Title
+        #SLACK_USERNAME: rtCamp
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+
+      
+   # - uses: act10ns/slack@v1
+    #  with: 
+    #   status: ${{ job.status }}
+     #  channel: 'cicd'
       
   #  - name: slack integration
    # - uses: ravsamhq/notify-slack-action@v1
