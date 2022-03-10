@@ -41,28 +41,28 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
       
-   # - name: Slack Notification
-    #  uses: rtCamp/action-slack-notify@v2
-     # with:
-      #  status: ${{ job.status }} # required
-       # steps: ${{toJson(steps)}}
-      #env:
-       # SLACK_CHANNEL: cicd
-       # SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
-       # SLACK_ICON: https://github.com/rtCamp.png?size=48
+    - name: Slack Notification
+    - uses: rtCamp/action-slack-notify@v2
+      with:
+         status: ${{ job.status }} # required
+         steps: ${{toJson(steps)}}
+      env:
+        SLACK_CHANNEL: cicd
+        SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+        SLACK_ICON: https://github.com/rtCamp.png?size=48
         #SLACK_MESSAGE: 'Post Content :rocket:'
         #SLACK_TITLE: Post Title
         #SLACK_USERNAME: rtCamp
-       # SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+        SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
 
       
-    - uses: act10ns/slack@v1
-      with: 
-       status: ${{ job.status }}
-       steps: ${{toJson(steps)}}
-      env:
-       SLACK_CHANNEL: cicd
-       SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
+   # - uses: act10ns/slack@v1
+    #  with: 
+     #  status: ${{ job.status }}
+      # steps: ${{toJson(steps)}}
+      #env:
+       #SLACK_CHANNEL: cicd
+       #SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
 
       
   #  - name: slack integration
