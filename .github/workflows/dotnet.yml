@@ -23,6 +23,9 @@ jobs:
 
     runs-on: ubuntu-latest
     
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+    
 
     steps:
     - uses: actions/checkout@v2
@@ -36,6 +39,14 @@ jobs:
       run: dotnet build --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
+      
+    - name: slack integration
+    - uses: ravsamhq/notify-slack-action@v1
+      if: always()
+      with:
+       status: ${{ job.status }} # required
+    env:
+      SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }} # required
 
   #deploy_to_dev:
    # runs-on: ubuntu-latest
