@@ -45,11 +45,13 @@ jobs:
       uses: rtCamp/action-slack-notify@v2
       with:
         status: ${{ job.status }} # required
-        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
+        #fields: repo,message,commit,author,action,eventName,ref,workflow,job,took # selectable (default: repo,message)
         steps: ${{toJson(steps)}}
+        channel: cicd
+        
       env:
-        SLACK_CHANNEL: cicd
-        SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
+        #SLACK_CHANNEL: cicd
+        #SLACK_COLOR: ${{ job.status }} # or a specific color like 'good' or '#ff00ff'
        # SLACK_ICON: https://github.com/rtCamp.png?size=48
         #SLACK_MESSAGE: 'Post Content :rocket:'
         #SLACK_TITLE: Post Title
