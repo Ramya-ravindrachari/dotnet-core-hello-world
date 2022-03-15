@@ -3,7 +3,7 @@ name: .NET
 #on..:
   #push:
     #branches: [ workitem ]
-  #pull_request:
+  ##pull_request:
     #branches: [ Integration ]
 on:
    #schedule:
