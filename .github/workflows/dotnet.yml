@@ -45,8 +45,8 @@ jobs:
     if: github.event_name != 'pull_request'
     environment: Deployment
     steps:
-       - name: running deployment script
-         run: echo "deployment ...."
+        - name: running deployment script
+          run: echo "deployment ...."
 #comment
 #comment1
 #commen3
