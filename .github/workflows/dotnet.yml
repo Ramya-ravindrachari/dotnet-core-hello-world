@@ -46,7 +46,7 @@ jobs:
     environment: Deployment
     steps:
         - name: running deployment script
-         run: echo "deployment ...."
+          run: echo "deployment ...."
 #comment
 #comment1
 #commen3
