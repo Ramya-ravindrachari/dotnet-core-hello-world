@@ -8,17 +8,12 @@
 #4.0
 name: .NET
 
+
 on:
-  push:
-    branches: [ master]
-  #pull_request:
-    #branches: [ Integratiion ]
-#on:
-   #schedule:
-    #- cron: '0 0 * * *'
-   #push:
-     #branches:
-     #- Workitem
+   
+   push:
+     branches:
+     - master
    pull_request:
     branches:
      - master
