@@ -1,6 +1,6 @@
-#codeowner testing1111
+#czmmzeowner testing1////11111122
 #added comment1
-#mergify test
+#mergify t,,,,est
 ##
 #1.0
 #2.o
@@ -8,17 +8,12 @@
 #4.0
 name: .NET
 
-#on:
-  #push:
-    #branches: [ workitem ]
-  #pull_request:
-    #branches: [ Integratiion ]
+
 on:
-   #schedule:
-    #- cron: '0 0 * * *'
-   #push:
-     #branches:
-     #- Workitem
+   
+   push:
+     branches:
+     - master-test
    pull_request:
     branches:
      - master
@@ -50,8 +45,8 @@ jobs:
     if: github.event_name != 'pull_request'
     environment: Deployment
     steps:
-       - name: running deployment script
-         run: echo "deployment ...."
+        - name: running deployment script
+          run: echo "deployment ...."
 #comment
 #comment1
 #commen3
