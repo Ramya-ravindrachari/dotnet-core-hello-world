@@ -43,7 +43,7 @@ jobs:
         
         uses: megalinter/megalinter@v5
         env:
-          DISABLE_ERRORS: false
+          DISABLE_ERRORS: true
           VALIDATE_ALL_CODEBASE: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
