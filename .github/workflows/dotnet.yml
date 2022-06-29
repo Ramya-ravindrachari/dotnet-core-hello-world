@@ -54,11 +54,12 @@ jobs:
         script: |
            await github.request('POST /repos/${{github.repository}}/releases', {
            
-           tag_name: 'v1.0.0',
+            tag_name: 'v1.0.0',
            
-           draft: false,
-           prerelease: false,
-           generate_release_notes: true
+            draft: false,
+            prerelease: false,
+            generate_release_notes: true
+           })
 #comment
 #comment1
 #commen3
