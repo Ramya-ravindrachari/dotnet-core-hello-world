@@ -41,6 +41,24 @@ jobs:
     steps:
         - name: running deployment script
           run: echo "deployment ...."
+          
+  Create-github-release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: create release notes
+      uses: actions/github-script@v6.1.0
+      with:
+        github-token: ${{secrets.GITHUB_TOKEN}}
+        script: |
+           await github.request('POST /repos/${{github.repository}}/releases', {
+           
+           tag_name: 'v1.0.0',
+           
+           draft: false,
+           prerelease: false,
+           generate_release_notes: true
 #comment
 #comment1
 #commen3
