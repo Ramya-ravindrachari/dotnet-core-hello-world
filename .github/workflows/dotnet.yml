@@ -24,7 +24,7 @@ jobs:
     - name: Checkout repository and submodules
       uses: actions/checkout@v2
       with:
-        repository: philips-internal/ampm-lib-reusable-templates
+        
 
         submodules: true
         token: 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
