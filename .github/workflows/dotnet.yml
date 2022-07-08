@@ -32,7 +32,7 @@ jobs:
     - run: git submodule update --init --recursive  
       
     - name: Build
-      uses: ./my-test@branch_test/github_actions/workflows/
+      uses: ./my-test/github_actions/workflows/action.yml
 
       
    # - name: Use submodule action
