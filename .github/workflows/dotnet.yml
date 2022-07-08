@@ -21,20 +21,15 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
    
-    - name: Checkout repository and submodules
-      uses: actions/checkout@v2
+ #   - name: Checkout repository and submodules
+  #    uses: actions/checkout@v2
+   #   with:
+    #    submodules: recursive
+     #   token: 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
+    - uses: actions/checkout@v2
       with:
-        submodules: recursive
         token: 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
-
-
-
-      
-    
- #   - uses: actions/checkout@v2
-  #    with:
-   #     token: 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
-    #- run: git submodule update --init --recursive  
+    - run: git submodule update --init --recursive  
       
    # - name: Build
     #  uses: ./ampm-lib-reusable-templates/github_actions/workflows/
