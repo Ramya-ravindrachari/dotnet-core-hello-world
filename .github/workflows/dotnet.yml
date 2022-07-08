@@ -31,8 +31,8 @@ jobs:
     #    token: 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
     - run: git submodule update --init --recursive  
       
-   # - name: Build
-    #  uses: ./ampm-lib-reusable-templates/github_actions/workflows/
+    - name: Build
+      uses: ./my-test/github_actions/workflows/
 
       
    # - name: Use submodule action
