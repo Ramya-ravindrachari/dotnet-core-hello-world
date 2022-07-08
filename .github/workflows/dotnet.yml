@@ -26,9 +26,9 @@ jobs:
    #   with:
     #    submodules: recursive
      #   token: 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
-    - uses: actions/checkout@v2
-      with:
-        token: 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
+  #  - uses: actions/checkout@v2
+   #   with:
+    #    token: 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
     - run: git submodule update --init --recursive  
       
    # - name: Build
