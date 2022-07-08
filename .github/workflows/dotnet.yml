@@ -24,9 +24,7 @@ jobs:
     - name: Checkout repository and submodules
       uses: actions/checkout@v2
       with:
-        
-
-        submodules: true
+        submodules: recursive
         token: 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
 
 
