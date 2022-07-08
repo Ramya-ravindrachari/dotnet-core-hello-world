@@ -36,9 +36,9 @@ jobs:
           repository: Ramya-ravindrachari/my-test
           path: action.yml
           branch: branch_test
-          token: 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
+         # token: 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
 
-          persist-credentials: false
+          #persist-credentials: false
       
    # - name: Build
     #  uses: ./action.yml
